@@ -51,4 +51,4 @@ jobs:
           # Vercel CLI automatically picks up VERCEL_TOKEN env var
           vercel --prod --yes
         env:
-          VERCEL_TOKEN: ${{ secrets.VercelToken2 }} # Expose your secret as an environment variable
+          VERCEL_TOKEN: ${{ secrets.VerTok1 }} # Expose your secret as an environment variable
