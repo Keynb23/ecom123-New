@@ -1,0 +1,66 @@
+.profile-page-container {
+  max-width: 800px;
+  margin: 80px auto 40px auto;
+  padding: 30px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid #222222;
+  color: #222222;
+  text-align: center;
+}
+
+.profile-page-container h1 {
+  color: #111111;
+  margin-bottom: 30px;
+}
+
+.profile-details {
+  background-color: #eeeeee;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #555555;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.profile-details p {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.profile-details strong {
+  color: #333333;
+}
+
+.edit-profile-button,
+.delete-profile-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
+}
+
+.edit-profile-button {
+  background-color: #00ffff;
+  color: #111111;
+}
+
+.edit-profile-button:hover {
+  background-color: #00aaaa;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.delete-profile-button {
+  background-color: #ff00ff;
+  color: #f8f8f8;
+}
+
+.delete-profile-button:hover {
+  background-color: #a000a0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}

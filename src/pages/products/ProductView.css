@@ -1,0 +1,97 @@
+.product-view-container {
+  padding: 40px 20px;
+  width: 1400px;
+  height: 715px;
+  margin: 80px auto 20px auto;
+  background-color: #f8f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid #222222;
+  color: #222222; 
+}
+
+.product-view-content {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.product-view-image {
+  flex: 0 0 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px; 
+  padding: 20px;
+}
+
+.product-view-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 20px; 
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+              rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+              rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+              rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.product-view-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-view-details h2 {
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #222222; 
+}
+
+.product-view-details .view-brand {
+  font-size: 1.1em;
+  color: #444444; 
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.product-view-details .view-price {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #222222; 
+  margin-bottom: 20px;
+}
+
+.product-view-details .view-category,
+.product-view-details .view-rating {
+  font-size: 0.95em;
+  color: #666666; 
+  margin-bottom: 8px;
+}
+
+.product-view-details .view-description {
+  font-size: 1em;
+  color: #333333; 
+  line-height: 1.7;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .product-view-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .product-view-image {
+    flex: none;
+    width: 100%;
+    height: 300px;
+  }
+  .product-view-details h2 {
+    font-size: 1.6em;
+  }
+  .product-view-details .view-price {
+    font-size: 1.5em;
+  }
+}
