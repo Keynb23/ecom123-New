@@ -53,6 +53,6 @@ jobs:
           # Vercel CLI automatically picks up VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID env vars
           vercel --prod --yes
         env:
-          VERCEL_TOKEN: ${{ secrets.VerTok1 }}
+          VERCEL_TOKEN: ${{ secrets.VercelToken-1 }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }} # Add this line
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }} # Add this line
