@@ -54,3 +54,5 @@ jobs:
           vercel --prod --yes
         env:
           VERCEL_TOKEN: ${{ secrets.VerTok1 }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }} # Add this line
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }} # Add this line
