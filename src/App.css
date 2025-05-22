@@ -1,18 +1,7 @@
-.welcome-message {
-  text-align: center;
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: #eeeeee;
-  border-radius: 8px;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  color: #f8f8f8;
-  border: 1px solid #555555;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
+
 
 .home-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,21 +22,30 @@
 }
 
 .home-container p {
-  color: #f8f8f8;
+  color: #f0f0f0;
   font-size: 1.2em;
   margin-bottom: 2em;
   font-weight: 400;
 }
 
 .forms-wrapper {
+  background-color: #f8f8f8f3;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 2rem;
   padding: 2rem;
   gap: 2rem;
   width: 100%;
   max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border: 1px solid #3f3f3f52;
 }
 
 form {
@@ -113,12 +111,13 @@ form p,
   margin: 0 auto;
   padding: 1.5rem;
   background-color: #eeeeee;
+  color: #333333;
   border-radius: 8px;
-  box-shadow: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border: 1px solid #555555;
+  border: 1px solid #55555577;
 }
 
 .login-container {
@@ -128,13 +127,14 @@ form p,
   justify-content: center;
   padding: 2rem;
   background-color: #eeeeee;
+  color: #333333;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
-  border: 1px solid #555555;
+  border: 1px solid #55555577;
 }
 
 .login-form {
@@ -232,4 +232,79 @@ form p,
   .welcome-message {
     font-size: 0.9em;
   }
+}
+
+/* add to cart btn */
+
+.add-to-cart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.add-to-cart-btn {
+    background-color: #ff00ff;
+    color: #f8f8f8;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: none;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #a000a0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.add-to-cart-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.quantity-btn {
+  background-color: #ff00ff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+  min-width: 35px;
+}
+
+.quantity-btn.decrease {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.quantity-btn.increase {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.quantity-btn:hover {
+  background-color: #a000a0;
+}
+
+.quantity-display {
+  padding: 0 10px;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
+  min-width: 20px;
+  text-align: center;
 }

@@ -1,11 +1,10 @@
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
+  gap: 15px;
   margin: 0 auto;
   margin-top: 55px;
   max-width: 75%;
-  
 }
 
 .product-card {

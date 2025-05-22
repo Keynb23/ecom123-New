@@ -23,7 +23,7 @@ const ProductView: React.FC = () => {
         const response = await axios.get(
           `https://fakestoreapi.in/api/products/${id}`
         );
-        setProduct(response.data.product); // Change this line to access the nested product
+        setProduct(response.data.product);
       } catch (err: unknown) {
         if (axios.isAxiosError(err)) {
           setError(err.message);

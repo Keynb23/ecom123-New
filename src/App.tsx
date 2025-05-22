@@ -7,9 +7,8 @@ import ProductsPage from "./pages/products/Products";
 import ProductView from "./pages/products/ProductView";
 import { ProfilePage } from './pages/profile/ProfilePage';
 import { Cart } from './components/cart/Cart';
-import { LogRegPage } from './pages/profile/LogRegPage'; 
+import { LogRegPage } from './pages/profile/LogRegPage';
 import Contact from './pages/contact/Contact';
-import MouseTrail from './MouseTrail';
 
 const App = () => {
   const { authState } = useAuth();
@@ -17,26 +16,16 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <div className="App"><MouseTrail />
       <Routes>
-      
+
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:id" element={<ProductView />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<Cart />} /> 
+        <Route path="/cart" element={<Cart />} />
         <Route path="/login-register" element={<LogRegPage />} />
       </Routes>
-      </div>
-      {
-        authState.user && (
-          <div className="welcome-message">
-            <h2>Welcome, {authState.user.email}</h2>
-          </div>
-          
-        )
-      }
     </>
   );
 };

@@ -1,15 +1,14 @@
-// src/store/slices/productSlice.ts
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { Product } from '../../types/types';
 
 interface ProductState {
-  products: Product[]; // <--- Ensure this is an array type
+  products: Product[]; 
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 }
 
 const initialState: ProductState = {
-  products: [], // <--- This MUST be initialized as an empty array
+  products: [], 
   status: 'idle',
   error: null,
 };
@@ -19,7 +18,7 @@ const productSlice = createSlice({
   initialState,
   reducers: {
     setProducts: (state, action: PayloadAction<Product[]>) => {
-      state.products = action.payload; // <--- action.payload should be an array
+      state.products = action.payload;
       state.status = 'succeeded';
       state.error = null;
     },

@@ -29,7 +29,6 @@ function Navbar() {
           <div className="navbar-links-center">
             <NavLink to="/" className="navbar-link">Home</NavLink>
             <NavLink to="/products" className="navbar-link">Products</NavLink>
-            <NavLink to="/about" className="navbar-link">About</NavLink>
             <NavLink to="/contact" className="navbar-link">Contact</NavLink>
           </div>
 
