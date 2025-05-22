@@ -1,4 +1,3 @@
-
 name: Ecom123
 on:
   push:
@@ -20,35 +19,36 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.20.8'
+          node-version: "18.20.8"
       #Step 3: Install dependencies
       - name: Install dependencies
         run: npm install --legacy-peer-deps
       #Step 4: Run tests
-    #   - name: Run tests
-    #     run: npm test
+      #   - name: Run tests
+      #     run: npm test
       #Step 5: Build React app
       - name: Build React app
         run: npm run build
 
+
   deploy:
     runs-on: ubuntu-latest
-    needs: build #Only run deploy after the build job has succeeded
+    needs: build
     steps:
-      # Step 1: Checkout the code
       - name: Checkout code
         uses: actions/checkout@v2
-      # Step 2: Setup Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
-      #Step 3: Install dependencies
+          node-version: "20"
       - name: Install dependencies
         run: npm install --legacy-peer-deps
-      
-      #Step 4 Deploy to Vercel (or another platform)
+
+      # Step 4 Deploy to Vercel (or another platform)
       - name: Deploy to Vercel
         run: |
           npm install -g vercel
-          vercel --prod --yes --token ${{secrets.VercelToken2}}
+          # Vercel CLI automatically picks up VERCEL_TOKEN env var
+          vercel --prod --yes
+        env:
+          VERCEL_TOKEN: ${{ secrets.VercelToken2 }} # Expose your secret as an environment variable
