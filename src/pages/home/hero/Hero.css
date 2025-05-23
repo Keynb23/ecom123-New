@@ -1,3 +1,4 @@
+
 .hero-carousel-container {
   position: relative;
   width: 100%;
@@ -14,8 +15,9 @@
   text-align: center;
   color: #fafafa;
   font-size: 2.2em;
-  margin-bottom: 25px;
-  text-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px #00ffff;
+  
 }
 
 .carousel-slides {
@@ -34,7 +36,7 @@
   background-color: #111111;
   color: #f8f8f8;
   flex-direction: column;
-  border-top: .75px dotted #ff00ff;
+  
 }
 
 .carousel-slide-content {
@@ -125,7 +127,7 @@
 
 .carousel-button:hover {
   background-color: #00aaaa;
-  box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff;
+  box-shadow: 0 0 15px #00ffff;
 }
 
 .carousel-nav-button {

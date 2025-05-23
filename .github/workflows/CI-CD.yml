@@ -51,6 +51,5 @@ jobs:
         run: |
           npm install -g vercel
           # Vercel CLI automatically picks up VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID env vars
-          vercel --prod --yes
-        env:
-          VERCEL_TOKEN: ${{ secrets.vt1 }}
+          vercel --prod --yes --token ${{ secrets.vt1 }}
+

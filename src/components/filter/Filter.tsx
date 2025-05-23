@@ -3,10 +3,13 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import type { Product } from '../../types/types'; 
 import { setProducts } from '../../store/slices/productSlice'; 
+import { all } from 'axios';
 
 const Filter: React.FC = () => {
   const dispatch = useDispatch();
-  const allProducts = useSelector((state: any) => state.products.allProducts) as Product[]; 
+
+  const allProducts = useSelector((state: any) => state.products.allProducts) as Product[];
+
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [minPrice, setMinPrice] = useState<number | ''>('');
   const [maxPrice, setMaxPrice] = useState<number | ''>('');
@@ -15,26 +18,30 @@ const Filter: React.FC = () => {
   const [categories, setCategories] = useState<string[]>([]);
 
   useEffect(() => {
-    if (allProducts && allProducts.length > 0) {
-      const uniqueCategories = [...new Set(allProducts.map(product => product.category))];
-      setCategories(uniqueCategories);
-    }
-  }, [allProducts]);
+  if (allProducts && allProducts.length > 0) {
+    const allCategoryNames = allProducts.map(product => product.category);
+    const uniqueCategories = [...new Set(allCategoryNames)];
+    const sortedCategories = uniqueCategories.sort();
+
+
+    setCategories(sortedCategories);
+  }
+}, [allProducts]);
+
+console.log(allProducts);
 
   const applyFilters = () => {
-    let filtered = [...allProducts]; 
+    let filtered = [...allProducts];
 
     if (selectedCategory) {
       filtered = filtered.filter(product => product.category === selectedCategory);
     }
-
     if (minPrice !== '') {
       filtered = filtered.filter(product => product.price >= minPrice);
     }
     if (maxPrice !== '') {
       filtered = filtered.filter(product => product.price <= maxPrice);
     }
-
     if (minRating !== '') {
       filtered = filtered.filter(product => product.rating.rate >= minRating);
     }
@@ -42,13 +49,13 @@ const Filter: React.FC = () => {
       filtered = filtered.filter(product => product.rating.rate <= maxRating);
     }
 
-    dispatch(setProducts(filtered)); 
+    dispatch(setProducts(filtered));
   };
 
   return (
     <div className="filter-container">
-      <h2>Filter Products</h2>
       <div className="filter-options">
+
         <label>
           Category:
           <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
@@ -58,6 +65,7 @@ const Filter: React.FC = () => {
             ))}
           </select>
         </label>
+
         <label>
           Price Range:
           <input
@@ -73,6 +81,7 @@ const Filter: React.FC = () => {
             onChange={(e) => setMaxPrice(e.target.value === '' ? '' : parseFloat(e.target.value))}
           />
         </label>
+
         <label>
           Rating:
           <input
@@ -88,6 +97,7 @@ const Filter: React.FC = () => {
             onChange={(e) => setMaxRating(e.target.value === '' ? '' : parseFloat(e.target.value))}
           />
         </label>
+
         <button type="button" onClick={applyFilters}>Apply Filters</button>
       </div>
     </div>
