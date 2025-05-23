@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import type { Product } from '../../types/types'; 
 import { setProducts } from '../../store/slices/productSlice'; 
-import { all } from 'axios';
 
 const Filter: React.FC = () => {
   const dispatch = useDispatch();
