@@ -4,6 +4,8 @@ import type { RootState } from '../../main';
 import { removeFromCart, clearCart, increaseQuantity, decreaseQuantity, type CartItem } from '../../store/slices/cartSlice'; 
 import './Cart.css';
 
+// use react queries to fetch products for categories 
+
 export const Cart: React.FC = () => {
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
   const dispatch = useDispatch();
