@@ -5,6 +5,8 @@ export interface CartItem extends Product {
   quantity: number;
 }
 
+// session storage in this file
+
 interface CartState {
   cartItems: CartItem[];
   total: number;
